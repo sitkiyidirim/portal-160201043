@@ -58,7 +58,7 @@ yazılır.
 Ardından veritabanına modül ile alakalı tabloların yüklenebilmesi için migrate işlemi yapılmalıdır.
 
 ```
-php yii migrate/up --migrationPath=@vendor/kouosl/portal-oneri/migrations  
+php yii migrate/up --migrationPath=@vendor/kouosl/portal-AirCron/migrations  
 ```
 
 yazılır.
