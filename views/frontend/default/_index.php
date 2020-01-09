@@ -4,7 +4,7 @@ use kouosl\theme\widgets\Portlet;
 use kouosl\AirCron\messages\AirCron;
 
 
-$this->title = '&nbsp;AirCron';
+$this->title = 'AirCron';
 $data['title'] = Html::encode($this->title);
 $this->params['breadcrumbs'][] = $this->title;
 

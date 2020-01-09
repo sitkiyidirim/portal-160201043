@@ -25,6 +25,17 @@ class CustomAsset extends AssetBundle {
     public $css = [
     ];
 
+
+    
+    /**
+     * @var array html assets
+     */
+    public $modal = [
+    
+        'html/modal.html'
+    ];
+
+
     /**
      * @var array js assets
      */
