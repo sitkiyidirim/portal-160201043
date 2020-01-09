@@ -10,12 +10,28 @@ CustomAsset::register($this);
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
 <div class="site-index">
 
 <h1>Aircron</h1>
 
 <div class="grid-container">
+<?php
+
+$hamper = Yii::$app->db->createCommand('SELECT * FROM migration')->queryAll();
+
+
+//$sql = "insert into migration (version, apply_time) values (:version, :apply_time)";
+//$parameters = array(":version"=>"oc", ':apply_time' => "ugur 11221");
+//$response = Yii::$app->db->createCommand($sql)->execute($parameters);
+
+
+//print_r($hamper);
+
+
+
+
+?>
+
 
 <table id="JobTable" class="table table-bordered table-dark">
   <thead>
@@ -114,3 +130,5 @@ CustomAsset::register($this);
       </div>
     </div>
 </div>
+
+

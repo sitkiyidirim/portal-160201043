@@ -84,6 +84,13 @@ class Module extends \kouosl\base\Module
                 'tokens' => [
                     '{id}' => '<id:\\w+>'
                 ],
+
+				'urlManager' => [
+    'rules' => [
+        'RequestController' => 'AirCron/default/RequestController',
+        
+    ],
+],
                 /*'patterns' => [
                     'GET new-action' => 'new-action'
                 ]*/
@@ -92,4 +99,7 @@ class Module extends \kouosl\base\Module
         ] ;
 
     }
+	
+	
+	
 }
