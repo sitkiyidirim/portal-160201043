@@ -120,15 +120,11 @@ function deleteModal_Invoke()
     var thObject = $("th:contains('"+index+"')");
 
 
-    if(deleteJob(index))
-    {
+    deleteJob(index);
+    
          
          thObject.parent().remove();
-    }
-    else
-    {
-         updateUI(null);
-    }
+   
 }
 
 function deleteModal_Cancel()
@@ -138,25 +134,42 @@ function deleteModal_Cancel()
 
 function addModal_Invoke()
 {
+
     //get all modal variables
-    var modal_route = $("#html_yonlendirme").text();
-    alert(modal_route);
-    return;
-    if(addJob(route,time,data))
-    {
-        
-    }
-    else
-    {
-        updateUI(null);
-    }
+    var modal_route = $("#html_yonlendirme").val();
+    var modal_time = $("#html_tarih").val();
+    var modal_postdata = $("#html_postdata").val();
+
+
+    addJob(modal_route,modal_time,modal_postdata);
+    
+        var thObject = $("tbody");
+        var lastIDContainer = $("tbody").children().last().children().first();
+
+       
+        var lastid = lastIDContainer.text();
+
+     
+
+        lastid++;
+      
+        thObject.append( `
+
+            <tr>
+            <th scope="row">`+lastid +`</th>
+            <td>`+ modal_route+`</td>
+            <td>`+modal_time+`</td>
+            <td>`+modal_postdata+`</td>
+            <td><center><Button class="btn btn-danger" data-toggle="modal" data-target="#DeleteCronModal"> Delete </button></center></td>
+          </tr>
+          `);
 
 
 }
 
 function addModal_Cancel()
 {
-
+    // Do Nothing
 }
 
 
@@ -177,8 +190,7 @@ function deleteJob(jobIndex)
         data: {query: dataset},
         success: function(response) 
         {
-           
-            return true;
+      
         }
     });
 
@@ -204,11 +216,7 @@ function addJob(route,time,data)
         data: {query: dataset},
         success: function(response) 
         {
-
-            return true;
             
-           
-          
         }
     });
  

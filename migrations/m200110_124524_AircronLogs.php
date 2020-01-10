@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m200109_225943_AircronLogs
+ * Class m200110_124524_AircronLogs
  */
-class m200109_225943_AircronLogs extends Migration
+class m200110_124524_AircronLogs extends Migration
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class m200109_225943_AircronLogs extends Migration
      */
     public function safeDown()
     {
-        echo "m200109_225943_AircronLogs cannot be reverted.\n";
+        echo "m200110_124524_AircronLogs cannot be reverted.\n";
 
         return false;
     }
@@ -34,7 +34,7 @@ class m200109_225943_AircronLogs extends Migration
 
     public function down()
     {
-        echo "m200109_225943_AircronLogs cannot be reverted.\n";
+        echo "m200110_124524_AircronLogs cannot be reverted.\n";
 
         return false;
     }

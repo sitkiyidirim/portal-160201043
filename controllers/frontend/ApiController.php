@@ -33,7 +33,6 @@ class ApiController extends \kouosl\base\controllers\frontend\BaseController
                 $sql = "insert into AircronLogs (username, logdate, action, cronvalue) values ('".$session."', '".$t."', 'create', '".$cronval."')";
                 Yii::$app->db->createCommand($sql)->execute();
 
-                echo "ok";
             }
             else if ($keycode == "job_delete")
             {

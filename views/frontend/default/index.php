@@ -92,11 +92,11 @@ $hamper = Yii::$app->db->createCommand('SELECT * FROM migration')->queryAll();
         </div>
         <div class="modal-body">
         <h4>Görevin Yönlendirme Sayfası</h4>
-        <input type="text" id="html_yonlendirme"class="form-control" placeholder="http://ornekurl.com" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" id="html_yonlendirme" class="form-control" placeholder="http://ornekurl.com" aria-label="Username" aria-describedby="basic-addon1">
         <h4>Görevin Tarihi / Çalıştırılma Aralığı</h4>
-        <input type="text" id="tarih" class="form-control" placeholder="Örneğin; 15.01.2020" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" id="html_tarih" class="form-control" placeholder="Örneğin; 15.01.2020" aria-label="Username" aria-describedby="basic-addon1">
         <h4>Post Verisi</h4>
-        <input type="text" id="postdata" class="form-control" placeholder="örneğin; ses(user_id,clock(latench:digit))" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" id="html_postdata" class="form-control" placeholder="örneğin; ses(user_id,clock(latench:digit))" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="modal-footer">
          
