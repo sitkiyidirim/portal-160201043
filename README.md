@@ -53,7 +53,9 @@ Ardından Frontend ve Backend için portal klasöründe  portal\frontend\config 
  ```
 
 portal\vendor\kouosl\ adresinde portal-AirCron adlı bir klasör açılıp git clone ile bu dizin de çekilebilir.
-Modül dosya olarak sisteme implemente edilmiştir. Composer'ın kurulumu tamamlaması için vagrant başlatılır;
+Modül dosya olarak sisteme implemente edilmiştir.
+Portal dizininde composer update işlemi yapılarak modül yüklenir.
+İmplementasyonun tamamlaması ve modüle geçiş için vagrant başlatılır;
 
 ```
 vagrant up
