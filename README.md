@@ -6,7 +6,7 @@ Modül Tamamlandı (%100)
 
 Bu modülde kullanıcılar giriş yaptığı taktirde arayüzdeki tablo üzerinden zamanlı görevler ekleyip düzenleyebilir. Kullanıcılar tarafından yapılan değişiklikler; <kullanıcı adı> değişkeni ile birlikte sql'de log olarak tutulmaktadır.
 
-![](trailer.gif)
+![](show.gif)
 
 
 - Modülün amacı, yerel tabloda önizleme ve değişiklik sunmak ayrıca bu yapılan değişiklikleri yii'nin user id 'sine göre loglayarak diğer kullanıcılara göstermektir.
