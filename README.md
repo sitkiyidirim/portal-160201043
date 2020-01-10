@@ -1,5 +1,5 @@
 # AirCron Modülü
-Modül yapım aşamasındadır.
+Modül yapım aşamasındadır. %80
 
 Bu modülde kullanıcılar giriş yaptığı taktirde arayüzdeki tablo üzerinden zamanlı görevler ekleyip düzenleyebilir. Kullanıcılar tarafından yapılan değişiklikler; <kullanıcı adı> değişkeni ile birlikte sql'de log olarak tutulmaktadır.
 
