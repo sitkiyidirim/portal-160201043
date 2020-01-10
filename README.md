@@ -77,10 +77,12 @@ php yii migrate/up --migrationPath=@vendor/kouosl/portal-AirCron/migrations
 
 yazılır.
 
-Artık modülümüz hazır.
+## Artık modülümüz hazır.
 
-##Modüle Erişmek için ;
+## Modüle Erişmek için ;
 
 http://portal.kouosl/AirCron
 
+![Afiyet Olsun !](modul.png)
 
+### Afiyet Olsun !
