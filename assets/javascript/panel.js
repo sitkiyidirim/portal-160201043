@@ -15,17 +15,7 @@ $(document).ready(function() {
         var tdPage = thObject.siblings()[1];
         var tdDate = thObject.siblings()[2];
         
-    
-        var modalBody = $(".modal-body");
-    
-        modalBody.text
-        (`
-            "<br>
-            id: `+ index +`<br>
-            sayfa: `+ tdPage +`<br>
-            tarih/aralık: `+ tdDate +`<br>
-            "
-        `);
+  
 
     });
 
@@ -35,7 +25,7 @@ $(document).ready(function() {
     $( ".btn-dark" ).click(function() {deleteModal_Cancel()});
     $( ".btn-primary" ).click(function() {addModal_Invoke()});
     $( ".btn-secondary" ).click(function() {addModal_Cancel()});
-
+    $( ".btn-logs" ).click(function() {logsModal_Create()});
 
     $( "td" ).dblclick(function() {
         
@@ -115,6 +105,12 @@ function getSelectedModalIndex()
 
 //### << MODAL CONTROLS ###
 
+function logsModal_Create()
+{  
+   getLogs();
+   
+}
+
 function deleteModal_Invoke()
 {
    
@@ -124,7 +120,7 @@ function deleteModal_Invoke()
     var thObject = $("th:contains('"+index+"')");
 
 
-    if(deleteJob())
+    if(deleteJob(index))
     {
          
          thObject.parent().remove();
@@ -143,10 +139,12 @@ function deleteModal_Cancel()
 function addModal_Invoke()
 {
     //get all modal variables
-
-    if(addJob())
+    var modal_route = $("#html_yonlendirme").text();
+    alert(modal_route);
+    return;
+    if(addJob(route,time,data))
     {
-
+        
     }
     else
     {
@@ -164,48 +162,116 @@ function addModal_Cancel()
 
 //### >> MODAL CONTROLS ###
 
-function deleteJob()
+function deleteJob(jobIndex)
 {
-    return true;//or false
     var dataset = {
 
-        keycode: "job_delete"
+        keycode: "job_delete",
+        jobID: jobIndex
+      
 		
     }
     $.ajax({
         type: 'post',
-        url: 'core.php',
+        url: 'AirCron/api',
+        data: {query: dataset},
+        success: function(response) 
+        {
+           
+            return true;
+        }
+    });
+
+   
+}
+
+
+
+function addJob(route,time,data)
+{
+
+    var dataset = {
+
+        keycode: "job_add",
+        page : route,
+        interval : time,
+        postdata : data
+		
+    }
+    $.ajax({
+        type: 'post',
+        url: 'AirCron/api',
         data: {query: dataset},
         success: function(response) 
         {
 
-            updateUI(response);
-         
+            return true;
+            
            
           
         }
     });
  
 
-   
 }
+//<<>>
 
-function addJob()
+function getLogs()
 {
+    var response = "";
+  
+    var dataset = {
 
+       
+		
+    }
+    $.ajax({
+        type: 'get',
+        url: 'AirCron/api?logs',
+        data: {query: dataset},
+        success: function(ret) 
+        {
+            if(ret == "")
+            {
+                updateUI();
+            }   
+            else
+            {
+                $("#modal-body-showlogsmodal").html(ret);
+            }
+          
+         
+          
+        }
+    });
+    
 }
-
 
 function editJob(jobIndex, columnIndex,lastValue)
 {
-    alert(jobIndex+" "+ +columnIndex+" "+lastValue)
+  
+    var dataset = {
+
+        keycode: "job_edit",
+        jobID: jobIndex,
+        columndID : columnIndex,
+        newvalue : lastValue
+		
+    }
+    $.ajax({
+        type: 'post',
+        url: 'AirCron/api',
+        data: {query: dataset},
+        success: function(response) 
+        {
+
+          
+        }
+    });
+
+
+
 }
-
-
-
-
-
-
 
 function updateUI(response)
 {
@@ -240,9 +306,3 @@ function print_errorMessage()
     </div>`;
 }
 
-
-
-function addJob()
-{
-
-}

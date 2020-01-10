@@ -69,7 +69,10 @@ $hamper = Yii::$app->db->createCommand('SELECT * FROM migration')->queryAll();
 </table>
 
 
-<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddCronModal"> Add AirCron Job </button></td>
+<td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#AddCronModal"> Add AirCron Job </button></td>
+
+<td><button type="button" class="btn btn-logs" data-toggle="modal" data-target="#ShowLogsModal"> View AirCron Logs </button></td>
+
 </div>
 
 </div>
@@ -89,11 +92,11 @@ $hamper = Yii::$app->db->createCommand('SELECT * FROM migration')->queryAll();
         </div>
         <div class="modal-body">
         <h4>Görevin Yönlendirme Sayfası</h4>
-        <input type="text" class="form-control" placeholder="http://ornekurl.com" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" id="html_yonlendirme"class="form-control" placeholder="http://ornekurl.com" aria-label="Username" aria-describedby="basic-addon1">
         <h4>Görevin Tarihi / Çalıştırılma Aralığı</h4>
-        <input type="text" class="form-control" placeholder="Örneğin; 15.01.2020" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" id="tarih" class="form-control" placeholder="Örneğin; 15.01.2020" aria-label="Username" aria-describedby="basic-addon1">
         <h4>Post Verisi</h4>
-        <input type="text" class="form-control" placeholder="örneğin; ses(user_id,clock(latench:digit))" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" id="postdata" class="form-control" placeholder="örneğin; ses(user_id,clock(latench:digit))" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="modal-footer">
          
@@ -116,13 +119,6 @@ $hamper = Yii::$app->db->createCommand('SELECT * FROM migration')->queryAll();
           </button>
         </div>
       
-        <div class="modal-body">
-          "<br>
-          id : xxx<br>
-          sayfa : xxx<br>
-          "
-        </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal">Evet</button>
           <button type="button" class="btn btn-dark" data-dismiss="modal">Hayır</button>
@@ -132,3 +128,30 @@ $hamper = Yii::$app->db->createCommand('SELECT * FROM migration')->queryAll();
 </div>
 
 
+<div class="modal fade" id="ShowLogsModal" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Kullanıcılar yapılan en son yapılan 20 cron işlemi aşağıda listelenmiştir :</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      
+        <div class="modal-body" id= "modal-body-showlogsmodal">
+          "<br>
+          id : xxx<br>
+          sayfa : xxx<br>
+          "
+
+          <code>Cronz
+          </code>
+        </div>
+
+        <div class="modal-footer">
+      
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Tamam</button>
+        </div>
+      </div>
+    </div>
+</div>
