@@ -1,7 +1,19 @@
 # AirCron Modülü
-Modül yapım aşamasındadır. %80
+Modül Kullanıma Hazır !
+
+
+![](name-of-giphy.gif)
+
 
 Bu modülde kullanıcılar giriş yaptığı taktirde arayüzdeki tablo üzerinden zamanlı görevler ekleyip düzenleyebilir. Kullanıcılar tarafından yapılan değişiklikler; <kullanıcı adı> değişkeni ile birlikte sql'de log olarak tutulmaktadır.
+
+-Modülün amacı, yerel tabloda önizleme ve değişiklik sunmak ayrıca bu yapılan değişiklikleri yii'nin user id 'sine göre loglayarak diğer kullanıcılara göstermektir.
+-Tablo üzerinde yapılan tüm işlemler detaylıca sql veri tabanında tutulur ve sağ alttaki  "View AirCron Logs" Button'u ile görüntülenebilir.
+-Bunun dışında tıpkı phpmyadmin arayüzünden alışkın olduğu üzere mouse ile çift tıklayarak verilerde düzenleme yapılabilir.
+-Dinamik olarak (sayfa yenilenmeden) veri eklenebilir veya silinebilir. 
+-Tüm bu işlemler ajax ile anlık olarak yii alt yapısı kullanılarak geliştirilen bir ajax handler vasıtası ile veri tabanına aktarılmaktadır
+
+##Kurulum
 
 Modülü KouOsl Portal sistemine kurabilmek için composer.json dosyasına aşağıdaki kodlar eklenmelidir
 
