@@ -87,4 +87,3 @@ http://portal.kouosl/AirCron
 
 ![Afiyet Olsun !](modul.png)
 
-### Afiyet Olsun !
